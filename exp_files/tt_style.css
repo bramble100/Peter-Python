@@ -1,0 +1,10 @@
+a.tt_linklistright{
+	color: #505050;
+	text-decoration: underline; 
+	padding: 0 0 0 8px;
+	background-image: url(../images/nav_arrow_off.gif);
+	background-position: 0 2px;
+	background-repeat: no-repeat;
+	margin: 0 0 0 0;
+	display: inline;
+}

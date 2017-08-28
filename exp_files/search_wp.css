@@ -1,0 +1,20 @@
+/* searchfield  */
+div.searchhd {	height:35px; }
+/* Position Suchbegriff */
+.possbg { float:left;margin-right:9px;line-height:15px; }
+/* Position Wertpapierart */
+.posart { float:left;margin-right:7px;line-height:15px; }
+/* Position Börse */
+.posstm { float:left;margin-right:5px;line-height:15px; }
+/* Position Suchart */
+.possart { float:left;margin-right:5px;line-height:15px; }
+/* Position Suchartenauswahl */
+.possar { float:left;width:66px;margin-left:-5px; }
+/* Suchart tolerant */
+.satol { float:right;margin-top:0px; }
+/* Suchart exakt */
+.saexa { float:left;margin-left:5px;width:55px; }
+/* Position Submitbutton */
+.posbut { float:right;text-align:left;margin-top:13px;margin-right:3px;vertical-align:top; }
+
+.linkpos { margin-top: 17px;} 

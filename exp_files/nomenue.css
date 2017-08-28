@@ -1,0 +1,8 @@
+body {/*background-image: url(../images/lowerleft.gif);  */
+  			background-repeat: no-repeat;
+  			background-position: bottom left;
+  			background-color: #FFFFFF;
+}
+
+#content {position: absolute; top:0px; left: 15px;} 
+

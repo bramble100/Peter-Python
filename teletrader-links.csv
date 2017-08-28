@@ -1,0 +1,9 @@
+Stock Exchange;URL
+ATX;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-400018&typeId=0&menuId=1_1_2&lang=hu&pathName=ATX%20Prime
+DAX30;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-514562&typeId=0&menuId=1_2_1&lang=hu&pathName=DAX
+Mdax;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-514661&typeId=0&menuId=1_2_2&lang=hu&pathName=Mdax
+Sdax;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-514640&typeId=0&menuId=1_2_3&lang=hu&pathName=Sdax
+TechDAX;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-457683&typeId=0&menuId=1_2_4&lang=hu&pathName=TechDAX
+EuroNext 100 - 1;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-382586&typeId=0&menuId=1&lang=hu&sort=name&sortDirection=asc&pathName=EURONEXT%20100&pageRecords=1
+EuroNext 100 - 2;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-382586&typeId=0&menuId=1&lang=hu&sort=name&sortDirection=asc&pathName=EURONEXT%20100&pageRecords=2
+EuroNext 100 - 3;http://tdcfinancial.ttweb.net/Default.aspx?action=kursliste&id=tts-382586&typeId=0&menuId=1&lang=hu&sort=name&sortDirection=asc&pathName=EURONEXT%20100&pageRecords=3

@@ -1,0 +1,1558 @@
+/*  Kopie des styles.css - noprint display:none; 
+	id #content anpassen */
+.noprint { display: none; }
+
+/* Body-Definition */
+body { font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; }
+
+
+
+/* Allgemeine Linkdefinition */
+a { font-family: Verdana, Arial, Helvetica, sans-serif; color: #1963A9; text-decoration: none; font-weight:normal; }
+/* Breadcrum Linkstyle */
+a.breadcrums { }
+a.breadcrums:hover { color: #999999; }
+
+/* Allgemeine Imagedefinition */
+img { border: none; }
+/* Styleklassen für Spacerimages */
+img.spacer { height:1px; margin: 0px; padding:0px; }
+img.spacer2 { height:2px; margin: 0px; padding:0px; }
+
+hr.blue { color: #789DB3; height: 1px; border:0px; border-bottom: 1px solid #789DB3; }
+
+/* Textstyle - positive Werte */
+.nrpos {	font-size: 9px; color: #339933; }
+/* Textstyle - negative Werte */
+.nrneg {	font-size: 9px; color: #FF0000;	}
+
+.conttxt { font-size: 10px; color: #000000; }
+
+/* +++ Styles für Bereich HEAD +++ */
+table#head {  }
+table#head tr {  }
+table#head td.full { width: 100%; padding:0px;}
+table#head td { text-align: right; border: none; padding: 0px; margin: 0px; background-color:#779DB3; }
+/* Abstand zwischen Header und Contentteil */
+table#head td.whitespc { background: #FFFFFF; height: 2px; padding:0px; }
+/* Styleklasse für Logo */
+img.logo { vertical-align: bottom; border-left: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; }
+/* +++ END +++ */
+
+/* +++ Styles für Bereich NAVIGATION +++ */
+
+/* Navigationsbereich */
+#navigation { height: 100%; width: 177px; background-color: #FFFFFF; font-size: 11px; float: left; clear:left; margin-top: 5px; }
+/* Navigationskopf */
+div.navhead { text-transform: uppercase; background-color: #F2F2F2; padding: 5px 10px 5px 10px; border-bottom: 1px dashed #999999; margin-bottom: 7px; }	
+/* Loginbereich / Personalisierter Bereich */
+div.pershead { font-size: 11px; text-transform: uppercase; padding: 0px 0px 5px 0px; margin-bottom: 7px; }	
+/* Navigation 1. Ebene */	
+div.nav { font-size: 11px;	margin: 0px 15px 0px 10px;	padding: 7px 0px 7px 0px; border-bottom: 1px solid #CCCCCC; }
+/* Navigation 1. Ebene aktiv */	
+div.navo { color: #1963A9;	font-weight: bold;	font-size: 11px; margin: 0px 15px 0px 10px; padding: 7px 0px 7px 0px; border-bottom: 1px solid #CCCCCC; }
+
+/* Subnavigationsbereich */
+#subnavigation {  border-bottom: 1px solid #CCCCCC;	margin: 0px 15px 0px 10px;	padding: 7px 0px 10px 0px; }
+/* Navigationsliste 2. Ebene */
+ul#navsub { list-style-type: none; margin: 0px;	padding: 0px; }
+ul#navsub li {	background-image: url(../images/nav_dot.gif); background-repeat: no-repeat; background-position: 0px 7px; padding: 3px 0px 0px 10px; font-weight: bold; color: #1963A9;	border: none; }
+/* Navigationsliste 3. Ebene */
+ul#subsub {	list-style-type: none; margin: 0px;	padding: 0px 0px 2px 0px; }
+ul#subsub li {	background-image: url(../images/nav_dot2.gif); background-repeat: no-repeat; background-position: 0px 6px; font-weight: bold; color: #1963A9; border:none; }
+/* Linkstyles für navigationsbereich */
+ul#navsub a, ul#subsub a, div.nav a { font-weight: normal; }
+ul#navsub a:hover, ul#subsub a:hover, div.nav a:hover { font-weight: normal;} 
+
+
+/* +++ Styles Contentarea NAV +++ */
+/* Reiter: hellgraue Reiter auf blauem Hintergrund */
+.boxnav {background-color: #779DB3; width:100%; }
+ul#navbox {	font-size: 10px; line-height: 18px; height:18px; list-style-type: none; margin: 0px; padding: 1px 0px 0px 0px; }
+ul#navbox li {	list-style-type: disc; display: inline; padding: 2px 25px 3px 10px; color: #FFFFFF; border: none; }
+ul#navbox li.aktiv { background-image: url(../images/reiter_bg2.gif); background-repeat: no-repeat; background-position: right; background-color: #F4F4F4; color: #1963A9; }
+ul#navbox li a { color: #FFFFFF; }
+ul#navbox li a:hover { color: #DDDDDD; }
+
+/* +++ Styles Chart NAV +++ */
+/* Reiter: dunkelgraue Reiter auf hellgrauem Hintergrund*/
+.chartnav {background-color: #F4F4F4; width:100%; border-top: 1px solid #CCCCCC; }
+ul#navchart {	font-size: 9px; line-height: 18px; height:18px; list-style-type: none; margin: 0px; padding: 1px 0px 0px 3px; }
+ul#navchart li { list-style-type: disc; display: inline; padding: 1px 25px 3px 7px; color: #999999; border: none; }
+ul#navchart li.aktiv { background-image: url(../images/reiter_bgchart.gif); background-repeat: no-repeat; background-position: right;	background-color: #CCCCCC; color: #000000; }
+ul#navchart li a { color: #999999; }
+ul#navchart li a:hover { color: #000000; }
+
+
+/* +++ Styles Bereich CONTENT +++ */
+
+/* Positionierung des Sortierungsbuttons */
+.sort { float: right; vertical-align: top; padding-left: 3px; }
+
+/* Contentcontainer */
+/* #content { position: absolute; left: 200px; top:112px; width: 610px; } */
+
+#content { position: absolute; left: 20px; top:30px; width: 610px; }
+
+/* +++ Styles Contenthead +++ */
+/* Contentkopf - Überschrift */
+.contenthead {	width:100%; border-bottom: 1px solid #999999; vertical-align: bottom; }
+/* Überschrift im Contentkopf */
+#headline {	font-weight: bold; font-size: 11px;	caption-side: inherit; text-transform: uppercase; }
+/* Breadcrums Positionierung und Grunddefinition */
+#breadcrums { margin-top: 3px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #1963A9; font-size: 10px; margin-bottom: 24px; }
+/* Einfache Suche Positionierung und Grunddefinition */
+#simplesearch {	float: right; font-family: Verdana, Arial, Helvetica, sans-serif; color: #999999; font-size: 10px; }
+
+/* zur Positionierung von Elementen innerhalb einer Tabelle -> Lösung für unterschiedliche Padding-Darstellungen bei Browsern */
+div.intab {	padding: 0px 2px 0px 2px; }
+
+
+/* +++ Tabellenspezifische Styles +++ */
+/* Grunddefinition Tabelle */
+table { font-size: 10px; font-weight: normal; color: #000000; }
+/* Tabellenzeilen Grunddefinition */
+tr, tr.last { background-color: #FFFFFF; }
+
+/* Tabellenkopf Grunddefinition*/
+th { text-align: left; font-weight: normal; vertical-align: top; padding: 2px 0px 3px 0px; border-right: 1px solid #999999; background-color: #F4F4F4; }
+/* table header - last column, rechtsbuendig */
+th.lastcol { text-align: right; border-right: 0px solid #FFFFFF; }
+/* table header - last column, linksbuendig */
+th.lastcoll { border-right: 0px solid #FFFFFF; }
+/* table header - last column, zentriert */
+th.lastcolc { text-align: center; border-right: 0px solid #FFFFFF; }
+
+/* Tabellenkopf Variante*/
+th.th2 { text-align: left; font-weight: normal; vertical-align: top; padding: 2px 0px 3px 0px; border-right: 1px solid #999999; background-color: #F4F4F4; }
+/* table header - last column, rechtsbuendig */
+th.th2lc { text-align: right; border-right: 0px solid #FFFFFF; }
+/* table header - last column, linksbuendig */
+th.th2lcl { border-right: 0px solid #FFFFFF; }
+/* table header - last column, zentriert */
+th.th2lcc { text-align: center; border-right: 0px solid #FFFFFF; }
+
+/* Tabellenzelle Grunddefinition */
+td { text-align: left; padding: 3px 0px 5px 0px; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; vertical-align: top; }
+
+/* Styles Tabellenzelle letzte Zeile */
+tr.last td { border-bottom: 0px; }
+/* Tabellenzelle - letzte Spalte, rechtsbuendig */
+td.lastcol { text-align:right; border-right: 0px; }
+/* Tabellenzelle - letzte Spalte, linksbuendig */
+td.lastcoll { border-right: 0px; }
+/* Spezielle Zellendarstellung - kein Depot, Widmungsfehler */
+td.special { border-right: 0px; font-weight: bold; vertical-align: middle;	height: 25px; }
+
+/* Tabellenheader Linie oben (Linie - Abstand) */
+td.thtline { height: 2px; margin: 0px; padding: 0px 0px 0px 0px;	border: 0px; border-top: 1px solid #999999; background-color: #F4F4F4; }
+/* Tabellenheader Linie unten (Abstand - Linie) */
+td.thbline { padding: 0px 0px 0px 0px;	border: 0px; border-bottom: 1px solid #999999; background-color: #F4F4F4; }
+/* Tabellenheader 2 Linie oben (Linie - Abstand) */
+td.th2tline { padding: 0px 0px 0px 0px;	border: 0px; border-top: 1px solid #999999; background-color: #F4F4F4; }
+/* Tabellenheader 2 Linie unten (Abstand - Linie) */
+td.th2bline { padding: 0px 0px 0px 0px;	border: 0px; border-bottom: 1px solid #999999; background-color: #F4F4F4; }
+/* Summenzeile Linie oben (Linie - Abstand) */
+td.tftline { padding: 0px 0px 0px 0px; border: 0px; border-top: 1px solid #999999; background-color: #F4F4F4; }
+/* Summenzeile Linie unten (Abstand - Linie) */
+td.tfbline { padding: 0px 0px 0px 0px;	border: 0px; border-bottom: 1px solid #999999; background-color: #F4F4F4; }
+
+/* Abschlusslinie für Tabelle*/
+.endline { padding: 0px 0px 0px 0px; border: 0px; border-top: 1px solid #999999; }
+/* Abstand + Linie */
+td.spcline { padding: 0px 0px 0px 0px;	border: 0px; border-bottom: 1px solid #999999; background-color: #F4F4F4; }
+/* Linie + Abstand */
+td.linespc { padding: 0px 0px 0px 0px;	border: 0px; border-top: 1px solid #999999; background-color: #F4F4F4; }
+
+/* Tabellenüberschrift */
+.thline { float:left; color: #000000; font-size: 10px; font-weight: bold; padding-bottom: 3px; }
+.thline2 { float:left; color: #000000; font-size: 10px; font-weight: bold; padding-bottom: 3px; text-indent: 10px;}
+
+/* schmale Tabelle für 2 nebeneinander Fonddetails */
+table.fdi { width: 290px; font-size:9px; margin: 0px; }
+table.fdi td { border-right: 0px; }
+table.fdi td.leftcol { font-weight: bold; padding-left: 5px;}
+table.fdi td.rightcol { text-align: right;  padding-right: 5px;}
+table.fdi td.rightcol2 { text-align: right; border-right: 0px solid #789DB3; padding-right: 5px; }
+table.fdi .col1 { width: auto;} 
+table.fdi .col2 { width: auto; }
+
+/* Tabelle für Index und Marktuebersichten */
+table.iil {	width: 610px; font-size:10px; }
+table.iil th {	font-size:10px;  }
+table.iil tr:hover td {background-color: #F4F4F4; }
+table.iil .col1 { } 
+table.iil .col2 { width: 95px; }
+table.iil .col3 { width: 20px; }
+table.iil .col4 { width: 88px; }
+table.iil .col5 { width: 95px; }
+table.iil .col6 { width: 70px; }
+table.iil .col7 { width: 70px; }
+
+/* Index Kursliste Tabelle */
+table#rst {	width: 610px; font-size:10px; margin-bottom: 5px; }
+table#rst th {	font-size:10px;  }
+table#rst td.negtrend { text-align: right; }
+table#rst td.postrend { text-align: left;   }
+table#rst .col1 { width: auto;} 
+table#rst .col2 { width: 35px; }
+table#rst .col3 { width: auto; }
+table#rst .col4 { width: auto; }
+table#rst .col5 { width: 40px; }
+table#rst .col6 { width: 88px; }
+table#rst .col7 { width: 70px; }
+table#rst .col8 { width: 65px; }
+
+
+/* Index Kursliste Tabelle */
+table#wpo {	width: 590px; font-size:10px; margin-bottom: 20px;border: 1px solid #789DB3; }
+table#wpo th {	font-size:10px; font-weight: normal; border: 0px; background-color: #FFFFFF; } 
+table#wpo td { border: 0px; background-color: #F4F4F4; }
+table#wpo td.spcline { background-color: #FFFFFF; border-color: #FFFFFF;}
+table#wpo .col1 { width: auto;} 
+table#wpo .col2 { width: auto; }
+table#wpo .col3 { width: 80px; }
+table#wpo .col4 { width: 88px; }
+table#wpo .col5 { width: auto; }
+table#wpo .col6 { width: auto; }
+table#wpo .col7 { width: auto; }
+
+/* Index Kursliste Tabelle */
+table.tfl {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table.tfl th {	font-size:10px; font-weight: bold; border-color: #789DB3;} 
+table.tfl td.spcline { border: 0px; height: 1px; }
+table.tfl td.thbline { border-bottom: 1px solid #789DB3; }
+table.tfl td { }
+table.tfl td.negtrend { text-align: right; }
+table.tfl td.postrend { text-align: left;   }
+table.tfl tr:hover { background-color: #F4F4F4; }
+table.tfl .col1 { width: auto;} 
+table.tfl .col2 { width: auto; }
+table.tfl .col3 { width: 20px; }
+table.tfl .col4 { width: 60px; }
+table.tfl .col5 { width: 88px; }
+table.tfl .col6 { width: auto; }
+
+.charttabhl { font-size: 10px; font-weight:bold; text-indent: 5px; margin-bottom: 5px;  }
+
+/* Index Kursliste Tabelle */
+table.ikl {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table.ikl th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF;} 
+table.ikl td {background-color: #F4F4F4; }
+table.ikl td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table.ikl td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table.ikl tr:hover td { background-color: #FFFFFF; }
+table.ikl .col1 { width: auto;} 
+table.ikl .col2 { width: auto; }
+table.ikl .col3 { width: 40px; }
+table.ikl .col4 { width: auto; }
+table.ikl .col5 { width: 60px; }
+table.ikl .col6 { width: 94px; }
+table.ikl .col7 { width: 75px; }
+table.ikl .col8 { width: auto; }
+
+
+/* Index Kursliste Tabelle */
+table#qsm {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table#qsm th {	font-size:10px; border-color: #789DB3;background-color: #FFFFFF;} 
+table#qsm td {background-color: #F4F4F4; }
+table#qsm td.spcline { border: 0px; height: 1px;background-color: #FFFFFF; }
+table#qsm td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#qsm tr:hover { background-color: #F4F4F4; }
+table#qsm .col1 { width: auto;} 
+table#qsm .col2 { width: auto; }
+table#qsm .col3 { width: 40px; }
+table#qsm .col4 { width: auto; }
+table#qsm .col5 { width: 88px; }
+table#qsm .col6 { width: 90px; }
+table#qsm .col7 { width: 90px; }
+
+/* Index Kursliste Tabelle */
+table#bkbw {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table#bkbw th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF; } 
+table#bkbw td { background-color: #F4F4F4; }
+table#bkbw td.spcline { border: 0px; height: 1px;  background-color: #FFFFFF;}
+table#bkbw td.thbline { border-bottom: 1px solid #789DB3;  background-color: #FFFFFF; }
+table#bkbw tr:hover { background-color: #F4F4F4; }
+table#bkbw .col1 { width: auto;} 
+table#bkbw .col2 { width: auto; }
+table#bkbw .col3 { width: auto; }
+table#bkbw .col4 { width: auto; }
+table#bkbw .col5 { width: auto; }
+table#bkbw .col6 { width: 88px; }
+table#bkbw .col7 { width: auto; }
+
+
+/* Index Kursliste Tabelle */
+table#fkz {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table#fkz th {	font-size:10px; font-weight: bold; border-color: #789DB3; border: none; background-color: #FFFFFF;} 
+table#fkz td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#fkz td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#fkz td { border-right: none; background-color: #F4F4F4;}
+table#fkz tr:hover td { background-color: #FFFFFF; }
+table#fkz .col1 { width: auto;} 
+table#fkz .col2 { width: auto; }
+table#fkz .col3 { width: auto; }
+table#fkz .col4 { width: auto; }
+table#fkz .col5 { width: auto; }
+
+/* Index Kursliste Tabelle */
+table.fch {	width: 280px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; margin-left:5px; }
+table.fch th {	font-size:10px; font-weight: bold; border-color: #789DB3; border: none;} 
+table.fch tr.chart td { padding: 0px; }
+table.fch td.spcline { border: 0px; height: 1px; }
+table.fch td.thbline { border-bottom: 1px solid #789DB3; }
+table.fch td { border-right: none; background-color: #F4F4F4; }
+table.fch tr:hover td { background-color: #FFFFFF; }
+table.fch .col1 { width: auto;} 
+table.fch .col2 { width: 20px; }
+table.fch .col3 { width: 60px; }
+
+div.chartco1 { background-color: #076E91; width: 20px; height: 10px; }
+div.chartco2 { background-color: #99C7D7; width: 20px; height: 10px; }
+div.chartco3 { background-color: #CDE2E9; width: 20px; height: 10px; }
+div.chartco4 { background-color: #E8F2F6; width: 20px; height: 10px; }
+div.chartco5 { background-color: #CCCCCC; width: 20px; height: 10px; }
+div.chartco6 { background-color: #AEAEAE; width: 20px; height: 10px; }
+div.chartco7 { background-color: #808080; width: 20px; height: 10px; }
+div.chartco8 { background-color: #404040; width: 20px; height: 10px; }
+
+
+
+/* Index Kursliste Tabelle */
+table#fper {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table#fper th {	font-size:10px; font-weight: bold; border:none;} 
+table#fper td.spcline { border: 0px; height: 1px; }
+table#fper td.thbline { border-bottom: 1px solid #789DB3; }
+table#fper td { border:none; background-color:#F4F4F4;}
+table#fper td.negtrend { text-align: right; }
+table#fper td.postrend { text-align: left;   }
+/*table#fper tr:hover { background-color: #F4F4F4; }*/
+table#fper .col1 { width: auto;} 
+table#fper .col2 { width: 110px; }
+table#fper .col3 { width: 110px; }
+table#fper .col4 { width: 110px; }
+table#fper .col5 { width: 110px; }
+
+/* Index Kursliste Tabelle */
+table#fkon {	width: 590px; font-size:10px; margin-bottom: 15px;border: 1px solid #789DB3; }
+table#fkon th {	font-size:10px; font-weight: bold; border: none;} 
+table#fkon td.spcline { border: 0px; height: 1px; }
+table#fkon td.thbline { border-bottom: 1px solid #789DB3; }
+table#fkon td { border: none; background-color:#F4F4F4;}
+table#fkon td.negtrend { text-align: right; }
+table#fkon td.postrend { text-align: left;   }
+/*table#fkon tr:hover { background-color: #F4F4F4; }*/
+table#fkon .col1 { width: auto;} 
+table#fkon .col2 { width: 220px; }
+table#fkon .col3 { width: 220px; }
+
+
+/* Index Kursliste Tabelle */
+table#oel {	width: 590px; font-size:10px; border: 1px solid #789DB3; margin-left: 5px;  }
+table#oel th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF;} 
+table#oel td { background-color: #F4F4F4; }
+table#oel td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#oel td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#oel tr:hover td { background-color: #FFFFFF; }
+table#oel .col1 { width: auto;} 
+table#oel .col2 { width: 92px; }
+table#oel .col3 { width: 92px; }
+table#oel .col4 { width: auto; }
+table#oel .col5 { width: 40px; }
+table#oel .col6 { width: 71px; }
+table#oel .col7 { width: 60px; }
+
+
+table#oel.oel2 { width: 100%; margin-left: 0px; border: none; }
+table#oel.oel2 th {	font-size:10px; border-color: #789DB3; background-color: #F4F4F4;} 
+table#oel.oel2 td { background-color: #FFFFFF; }
+table#oel.oel2 td.thtline { background-color: #F4F4F4; }
+table#oel.oel2 td.thbline { border-bottom: 1px solid #999999; background-color: #F4F4F4;}
+
+img.trendimg { margin-top: 2px; }
+img.torte { width: 288px; }
+
+div.charttab {
+	padding-left: 5px;
+	margin-top: 10px;
+}
+
+div.charttab2 {
+	padding-left: 5px;
+	margin-top: 15px;
+	margin-left:5px;
+}
+
+div.chartpos {
+height:340px;margin:0px;margin-left: 1px;
+}
+div.javachartpos {
+height:449px;margin:0px;padding:0px;margin-left: 1px;
+}
+
+div.plchartpos {
+margin:0px;padding:0px;margin-left: 1px;
+}
+
+div.smallchart { height:220px; }
+div.smallchart2 { height:240px; }
+
+
+/* Textausrichtung rechts*/
+.aright { text-align: right; }
+/* Textausrichtung zentriert */
+.acent {	text-align: center; }
+
+
+/* Tabelle Wertpapier Charts Einstellungen*/
+table#cpr { width: 550px; font-size: 10px; margin-left: 20px; padding: 0px; }
+table#cpr td {	border: none; background-color: #F4F4F4; vertical-align: middle;}
+table#cpr .col1 {	width: 90px; }
+table#cpr .col2 {	width: 180px; }
+table#cpr .col3 {	width: 90px; }
+table#cpr .col4 {	width: 180px; }
+
+/* Tabelle Wertpapier Charts Einstellungen*/
+table#oss { width: 590px; font-size: 10px; margin-left: 5px; padding: 0px; border: none; margin-bottom: 10px;}
+table#oss td { border: none; background-color: #F4F4F4; vertical-align: middle;}
+table#oss td.empty { height: 10px; }
+table#oss tr.special td { border-bottom: 1px solid #CCCCCC;  }
+table#oss tr.special td.empty { border:none; }
+table#oss div.intab {padding-left: 10px; }
+table#oss .col1 {	width: 140px; }
+table#oss .col2 {	width: 215px; }
+table#oss .col3 {	width: auto; }
+
+
+/* Tabelle Wertpapier Charts Einstellungen*/
+table#oss2 { width: 100%; font-size: 10px; padding: 0px; border: none; margin-bottom: 10px; border: 1px solid #789DB3;}
+table#oss2 td { border: none; background-color: #F4F4F4; vertical-align: middle;}
+table#oss2 td.empty { height: 10px; }
+table#oss2 tr.special td { border-bottom: 1px solid #CCCCCC;  }
+table#oss2 tr.special td.empty { border:none; }
+table#oss2 div.intab {padding-left: 10px; }
+table#oss2 .col1 {	width: 160px; }
+table#oss2 .col2 {	width: 215px; }
+table#oss2 .col3 {	width: auto; }
+
+/* +++ Styles für FORMULARE +++ */
+/* allgemeiner Selectbox Style */
+/* select {	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: normal; color:#000000; text-transform: none; text-decoration: none; text-align: left; background-color: #ffffff; height: 18px; } */
+/* allgemeiner Input-Tag Style */
+/*input { font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #000000; text-transform: none; border: 1px #999999 solid; background-color: #ffffff; padding: 1px 2px 0px 2px; } */
+/* simple search - inputfelder */
+
+select { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: normal; color:#000000; text-transform: none; text-decoration: none; text-align: left; background-color: #ffffff; }
+input { font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #000000; text-transform: none; border: 1px #999999 solid; background-color: #ffffff; }
+
+input.simple { width: 91px; /*height: 13px;*/  padding: 1px 2px 1px 2px; margin: 4px 4px; }
+/* submitbutton */
+.subbut { font-size: 9px; padding: 0px 1px 0px 1px; margin: 3px 0px;  background-color: #F4F4F4; color: #808080; border: 1px #999999 solid; }
+.subbut2 { font-size: 9px; padding: 0px 1px 0px 1px; margin: 3px 0px;  background-color: #F4F4F4; color: #808080; border: 1px #999999 solid;margin-right: 20px; }
+
+.imgsub { border:none; }
+.imgsub2 { border:none; vertical-align:middle;margin-bottom: 3px;margin-right:18px; }
+
+/* input ohne border für Radiobuttons, Checkboxes, Img-Submitbuttons */
+input.noborder { border: none; background-color: transparent; padding: 0px; }
+/* Optionsscheinsuche */
+input.osearchisin { width: 198px; }
+input.osearchbw { width: 198px; }
+select.osearchemit, select.osearchmarket, select.osearchvbw { width: 200px; }
+input.osearchbpvon, input.osearchbpbis, input.osearchfvon, input.osearchfbis { width: 94px; }
+
+
+
+/* wertpapier chart einstellungen */
+input.gd {	width:40px; /*height:13px;*/ }
+/* wertpapier chart einstellungen */
+select.chartsel { width:165px; }
+
+
+
+/* styles for printonly content */
+.printtxt {	display: none; }
+.onlyprint { display: none; }
+
+
+
+div.reiterbg {
+	border-left: 1px solid #789DB3;
+	background:url("../images/reiter.gif") top right no-repeat; 
+	margin-top:1px;
+	padding:0;
+}
+
+div.reiterbgaktiv {
+	border-left: 1px solid #789DB3;
+	background:url("../images/reiter_f2.gif") top right no-repeat; 
+	margin-top: 1px;
+	padding:0;
+}
+
+div.reiterbg a:hover{
+	color: #333333;
+}
+
+div.innerreiter {
+	font-size: 10px;
+	margin: 0;
+	padding: 2px 22px 2px 7px;
+}
+
+div#detr1 { 	position:absolute;left:10px; }
+div#detr2 { 	position:absolute;left:68px; }
+div#detr3 { 	position:absolute;left:116px; }
+div#detr4 { 	position:absolute;left:166px; }
+
+
+div#idxchart ul.reiter li {
+	background-color: #F4F4F4;
+}
+
+div#idxchart ul.reiter li:hover {
+	background-color: #FFFFFF;
+}
+
+div#idxchart ul.reiter li.aktiv {
+	color: #333333;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.dwldicon {margin-top: 5px; margin-bottom:-2px; }
+
+
+div.newsline {
+	font-size: 10px;
+	position: relative;
+	left: 5px;
+	width: 100%;
+}
+
+div.dwldline {
+	font-size: 10px;
+	position: relative;
+	left: 5px;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-right: 15px;
+}
+
+div.news {
+position: relative;
+top: -13px;
+left: 110px;
+width: 460px;
+}
+
+div.chrbg {
+	border-left: 1px solid #789DB3;
+	background:url("../images/reiter2.gif") top right no-repeat; 
+	margin-top:1px;
+	padding:0;
+}
+
+div.chrbgaktiv {
+	border-left: 1px solid #789DB3;
+	background:url("../images/reiter2_f2.gif") top right no-repeat; 
+	margin-top: 1px;
+	padding:0;
+}
+
+div.chrbg a:hover{
+	color: #333333;
+}
+
+div.chir {
+	font-size: 9px;
+	margin: 0;
+	padding: 2px 22px 2px 7px;
+}
+
+
+div#idxr1 { 	position:absolute;left:25px; }
+div#idxr2 { 	position:absolute;left:74px; }
+div#idxr3 { 	position:absolute;left:123px; }
+
+
+div#chr1 { 	position:absolute;left:15px; }
+div#chr2 { 	position:absolute;left:78px; }
+div#chr3 { 	position:absolute;left:145px; }
+div#chr4 { 	position:absolute;left:212px; }
+div#chr5 { 	position:absolute;left:263px; }
+
+
+div.graybox {
+	font-size: 10px;
+	padding: 15px 10px 5px 5px;
+	border-bottom: 1px solid #789DB3;
+/*	border-top: 1px solid #789DB3; */
+	background-color: #F4F4F4;
+	margin-bottom: 20px;
+}
+
+div.graybox2 {
+	font-size: 10px; 
+	padding: 10px 0px 5px 0px;
+	border-bottom: 1px solid #789DB3;
+	background-color: #F4F4F4;
+	margin-bottom: 20px;
+}
+
+div.graybox3 {
+	font-size: 10px; 
+	padding: 10px 0px 5px 5px;
+	border-bottom: 1px solid #789DB3;
+	border-top: 1px solid #789DB3;	
+	background-color: #F4F4F4;
+/*	margin-bottom: 20px;*/
+/*	margin-top:20px;*/
+}
+
+div.graybox4 {
+	font-size: 10px; 
+	padding: 0px 0px 0px 5px;
+	border-bottom: 1px solid #789DB3;
+	border-top: 1px solid #789DB3;	
+	background-color: #F4F4F4;
+	margin:0px;
+}
+
+div.grayboxnews {
+	font-size: 10px;
+	padding: 0px;
+	border-bottom: 1px solid #789DB3;
+	border-top: 1px solid #789DB3;	
+	background-color: #F4F4F4;
+}
+
+ div#det.grayboxnews {
+	padding: 10px 0px 5px 5px;
+	margin-top: 20px;
+}
+
+div.grayboxnews2 {
+	font-size: 10px;
+	padding: 15px 10px 5px 5px;
+	border-bottom: 1px solid #789DB3;
+/*	border-top: 1px solid #789DB3; */
+	background-color: #F4F4F4;
+}
+
+
+
+
+div#idxchart {
+	float: left;
+	font-size: 10px;
+	width: 190px;
+	padding-left:5px;
+}
+ 
+div#idxchart.detail {
+	width: 248px;
+	margin-top: 10px;
+	background-color: #F4F4F4;
+}
+
+
+div.kinfo {
+	width:330px;
+	height: 215px;
+	float: right;
+	border: 1px solid #789DB3;
+	margin-top: 10px;
+	background-color: #FFFFFF;
+}
+
+div#idxinfo.detail {
+	width:330px;
+	height: 190px;
+	float: right;
+	border: 1px solid #789DB3;
+	margin-top: 10px;
+	background-color: #FFFFFF;
+}
+
+
+
+div#idxchart.chart {
+	width: 551px;
+	height: 236px;
+}
+
+div.graph {
+	height: 190px;	
+	border: 1px solid #789DB3;
+	background-color: #F4F4F4;
+	padding: 0px;
+	margin:0px;
+}
+
+div#idxchart.chart div.graph {
+	height: 236px;
+}
+
+/*div#idxinfo {
+	float: right;
+	width: 230px;
+	padding: 7px 5px;
+	border-bottom: 1px solid #789DB3;
+	border-top: 1px solid #789DB3;
+	background-color: #FFFFFF;
+	margin-right: 20px;
+	margin-top:12px;
+}*/
+
+div.infohl {
+	font-size: 10px;
+	font-weight: bold;
+	width: 180px;
+	float: right;
+	padding: 0px 10px 0px 0px;
+	margin-right: 10px;
+	margin-top:12px;
+	text-transform: uppercase;
+}
+
+
+/*div#idxinfo.detail {
+	width: 180px;
+	margin-top: 4px;
+	margin-right: 10px;
+}
+*/
+div.infohd {
+	float:left;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 15px;
+}
+div.info {
+	text-align: right;
+	float:right;
+	font-size: 10px;
+	line-height: 15px;	
+}
+
+
+div#legende {
+	font-size: 9px; 
+	padding-left: 5px;	
+	text-align: center;
+	height: 20px;
+}
+
+div.rbox { float: right; }
+div.lbox { float: left; }
+.cbox { float:left;  }
+
+div.midbox {position:relative; left: 32px; }
+
+div#footer {
+	font-size: 9px; margin-top: 5px; margin-bottom: 10px; border-top: 1px solid #999999; padding-top: 5px; 
+}
+
+
+
+table#hdat { width: 330px; font-size: 9px; border: 1px solid #789DB3; border-bottom: 0px; }
+table#hdat th { font-size: 9px; border: 0px; background-color: #FFFFFF; }
+table#hdat td { border-right: 0px; background-color: #F4F4F4;  }
+table#hdat td.empty { height: 25px; }
+table#hdat .col1 { } 
+table#hdat .col2 { width: auto; }
+table#hdat .col3 { width: auto; }
+
+table#went { width: 330px; font-size: 9px; border: 1px solid #789DB3; border-top: 0px; background-color:#FFFFFF; }
+table#went th { font-size: 9px; border:0px; background-color: #FFFFFF; }
+table#went td { border-right: 0px; background-color: #F4F4F4; }
+table#went .col1 { } 
+table#went .col2 { width: auto; }
+table#went .col3 { width: auto; }
+
+div.addinfo {
+	height: 140px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+div.markets {
+	height: auto;
+	margin-left: 5px;
+}
+
+div.basis {
+	height: auto;
+	margin-left: 5px;
+}
+div.kennzahl {
+	height: auto;
+	margin-left: 5px;
+}
+
+div.charts {
+	height: auto;
+	margin-bottom: 20px;
+}
+
+div.mtab {
+	height: auto;
+	margin-bottom: 20px;
+}
+
+table#topv { width: 250px; font-size: 9px; border: 1px solid #789DB3; }
+table#topv th { font-size: 10px; border-right:0px; background-color: #FFFFFF;  }
+table#topv td { border-right: 0px; background-color: #F4F4F4;}
+table#topv tr:hover td { border-right: 0px; background-color: #FFFFFF;}
+table#topv .col1 { width: auto; } 
+table#topv .col2 { width: auto; }
+table#topv .col3 { width: 20px; }
+table#topv .col4 { width: 60px; }
+
+
+table#qkz { width: 250px; font-size: 9px; border: 1px solid #789DB3; }
+table#qkz th { font-size: 9px; border-right:0px;  background-color: #FFFFFF; }
+table#qkz td { font-size: 9px; border-right: 0px; background-color: #F4F4F4; }
+table#qkz .col1 { width: auto; } 
+table#qkz .col2 { width: auto; }
+
+div.addhl { color: #000000; font-size: 10px; font-weight: bold; padding-bottom: 3px; }
+div.addhl2 { color: #000000; font-size: 10px; font-weight: bold; padding-bottom: 3px; text-indent: 5px;}
+
+
+div.formhl { color: #000000; font-size: 10px; font-weight: bold; 
+border-top: 1px solid #789DB3;border-bottom: 1px solid #789DB3; margin-top: 10px; padding: 5px 0px; text-indent: 10px; background-color: #FFFFFF;
+ }
+
+div.formtxt { color: #000000; font-size: 10px;
+border-top: 1px solid #789DB3;border-bottom: 1px solid #789DB3; margin-top: 10px; padding: 2px 0px; background-color: #FFFFFF;
+ }
+
+
+form#optsearch { margin: 0px; }
+
+
+div.whitebox {
+	width: 590px;
+	padding: 0px 0px 0px 0px;
+	border: 1px solid #789DB3;
+	background-color: #FFFFFF;
+	margin-left: 5px;
+	margin-top: 3px;
+}
+div.inbox {
+	padding-left: 10px; margin-top: 7px;
+}
+
+/* Newsheadline */
+.newshd {	font-size: 10px;	font-weight: bold; padding-left: 5px;}
+.newsdat {	font-size: 10px; padding-left: 5px; line-height: 13px;}
+.newsaut {	font-size: 10px; padding-left: 5px;  }
+/* Newstext Hinweise */
+div.note {	text-align: right;	font-style: italic;  }
+
+
+/* dark buttons (with symbols) */
+*.dbtn { background-color: #999999; color: #FFFFFF; font-size: 9px; height: 15px;	
+float:right; padding: 1px 5px 0px 5px; margin: 0px; cursor: pointer; 
+vertical-align:top; border-left: 1px solid #FFFFFF;
+}
+a.dbtn { color: #FFFFFF; }
+
+#bbtn {
+	background:url("../images/icon_buy.gif") top left no-repeat;
+	background-color: #999999;
+	padding-left: 20px; 
+}
+#pbtn {
+	background:url("../images/icon_pers.gif") top left no-repeat; 
+	background-color: #999999;
+	padding-left: 20px; 
+	
+}
+
+#prbtn {
+	background:url("../images/btn_print.gif") top left no-repeat;
+	background-color: #999999;
+	padding-left: 20px; 
+}
+
+#abtn {
+	background:url("../images/btn_refresh.gif") top left no-repeat; 
+	background-color: #999999;
+	padding-left: 20px; 
+
+}
+
+#lbtn {
+	background:url("../images/btn_list.gif") top left no-repeat; 
+	background-color: #999999;
+	padding-left: 20px; 
+
+}
+
+#hbtn {
+	background:url("../images/btn_help.gif") top left no-repeat;
+	background-color: #999999;
+	padding-left: 14px; 
+}
+
+
+#smsbtn {
+	background:url("../images/btn_sms.gif") top left no-repeat;
+	background-color: #999999;
+	padding-left: 16px; 
+}
+
+
+/* Container Buttons (refresh, print, export) */
+.cbut { font-size: 10px; text-align:right; visibility: visible; width:100%; margin: 0px; height:17px; margin-bottom: 20px;}
+
+div.cbut ul {
+	margin:0px; padding:0px;
+}
+
+div.cbut li {
+	display:inline;
+}
+
+.trend1 { width: 2px; height: 7px; margin-top: 3px; }
+.trend2 { width: 4px; height: 7px; margin-top: 3px;}
+.trend3 { width: 6px; height: 7px; margin-top: 3px; }
+.trend4 { width: 8px; height: 7px; margin-top: 3px; }
+.trend5 { width: 10px; height: 7px; margin-top: 3px; }
+.trend6 { width: 12px; height: 7px; margin-top: 3px; }
+.trend7 { width: 14px; height: 7px; margin-top: 3px; }
+.trend8 { width: 16px; height: 7px; margin-top: 3px; }
+.trend9 { width: 18px; height: 7px; margin-top: 3px; }
+.trend10 { width: 20px; height: 7px; margin-top: 3px; }
+
+
+/* Tabelle Wertpapier Profil Daten*/
+table.profil {	margin-left: 5px; }
+table.profil .col1 {	width:130px; }
+table.profil .col2 { width: auto; }
+table.profil td {	border: none; background-color: #F4F4F4; padding: 2px 0px; }
+
+div.profiltxt { font-size: 10px;	width: 590px; margin-left:5px; }
+
+div.fondtxt { font-size: 10px; border: 1px solid #789DB3; padding: 7px 7px; /*background-color: #FFFFFF;*/ line-height: 13px; margin-bottom: 15px;}
+
+/* Tabelle Wertpapier Profil Kennzahlen */
+table#pkz { width: 610px; font-size: 10px; }
+table#pkz .col1 {	width: auto; }
+table#pkz .col2 {	width: 110px; }
+table#pkz .col3 {	width: 110px; }
+table#pkz .col4 {	width: 110px; }
+table#pkz .col5 {	width: 110px; }
+
+
+
+table#qbt { width: 590px; font-size: 9px; border: 1px solid #789DB3; margin-top: 10px; margin-left: 5px; margin-bottom: 10px; }
+table#qbt th { font-size: 9px; border-right:0px; border-bottom: 1px solid #CCCCCC; font-weight: bold;background-color: #FFFFFF; }
+table#qbt td { border-right: 0px; background-color: #F4F4F4;}
+table#qbt th.empty { background-color: #FFFFFF; }
+table#qbt tr:hover td { background-color: #FFFFFF; }
+table#qbt .col1 { width: auto; } 
+table#qbt .col2 { width: 90px; }
+table#qbt .col3 { width: 90px; }
+table#qbt .col4 { width: 90px; }
+table#qbt .col5 { width: 90px; }
+
+table#qkbt { width: 590px; font-size: 9px; border: 1px solid #789DB3; margin-top: 10px; margin-left: 5px; margin-bottom: 10px; }
+table#qkbt th { font-size: 9px; border-right:0px; border-bottom: 1px solid #CCCCCC; font-weight: bold;background-color: #FFFFFF;}
+table#qkbt td { border-right: 0px; background-color: #F4F4F4;}
+table#qkbt th.empty { background-color: #FFFFFF; }
+table#qkbt th.akt { color: #789DB3; text-align: right; background-color: #FFFFFF;}
+table#qkbt tr:hover td { background-color: #FFFFFF; }
+table#qkbt .col1 { width: auto; } 
+table#qkbt .col2 { width: 75px; }
+table#qkbt .col3 { width: 75px; }
+table#qkbt .col4 { width: 75px; }
+table#qkbt .col5 { width: 75px; }
+table#qkbt .col6 { width: 75px; }
+
+/* Index Kursliste Tabelle */
+table#qkt {	width: 590px; font-size:10px; margin-bottom: 20px;border: 1px solid #789DB3; }
+table#qkt th {	font-size:10px; border: 0px;background-color: #FFFFFF; } 
+table#qkt td.thbline {	background-color: #FFFFFF; } 
+table#qkt td { border-right: 0px;background-color: #F4F4F4;}
+table#qkt tr.akt td { background-color: #FFFFFF; }
+table#qkt tr:hover td { background-color: #FFFFFF; }
+table#qkt .col1 { width: auto;} 
+table#qkt .col2 { width: auto; }
+table#qkt .col3 { width: auto; }
+
+
+
+form#quotes_simple {
+	margin: 0px;
+}
+
+/* WP-Suche Ergebnis-Tabelle */
+table#wsr {	width: 100%; }
+table#wsr tr:hover { background-color: #F4F4F4; }
+table#wsr .col1 { width: 135px; }
+table#wsr .col2 { width: 53px; }
+table#wsr .col3 { width: auto; }
+table#wsr .col4 { width: 92px; }
+table#wsr .col5 { width: 76px; }
+table#wsr .col6 { width: auto; }
+table#wsr .col7 { width: 78px; }
+
+/* WP-Suche Ergebnis-Tabelle */
+table#fse {	width: 100%; }
+table#fse tr:hover { background-color: #F4F4F4; }
+table#fse .col1 { width: auto; }
+table#fse .col2 { width: auto; }
+table#fse .col3 { width: 41px; }
+table#fse .col4 { width: 38px; }
+table#fse .col5 { width: 70px; }
+table#fse .col6 { width: 42px; }
+table#fse .col7 { width: 62px; }
+table#fse .col8 { width: 62px; }
+table#fse .col9 { width: 62px; }
+
+/* WP-Suche Ergebnis-Tabelle */
+table.ane {	width: 100%; margin-bottom: 15px; }
+table.ane tr:hover { background-color: #F4F4F4; }
+table.ane .col1 { width: 50px; }
+table.ane .col2 { width: auto; }
+table.ane .col3 { width: auto; }
+table.ane .col4 { width: 92px; }
+table.ane .col5 { width: 69px; }
+table.ane .col6 { width: 70px; }
+table.ane .col7 { width: auto; }
+table.ane .col8 { width: auto; }
+table.ane .col9 { width: auto; }
+
+/* WP-Suche Ergebnis-Tabelle */
+table#ase {	width: 100%; margin-top: 20px; margin-bottom: 15px;}
+table#ase tr:hover { background-color: #F4F4F4; }
+table#ase .col1 { width: auto; }
+table#ase .col2 { width: auto; }
+table#ase .col3 { width: 50px; }
+table#ase .col4 { width: auto; }
+table#ase .col5 { width: 40px; }
+table#ase .col6 { width: 45px; }
+table#ase .col7 { width: 60px; }
+
+/* wertpapiersuche - inputfeld suchbegriff */
+input.search {	width:90px; /*height:13px;*/ }
+/* wertpapiersuche - selectbox wpart + boerse */
+select.wsel { width:130px; /*height:16px; */ }
+
+/* wertpapiersuche - inputfeld suchbegriff */
+input.fsearch {	width:210px; margin-top:3px; /*height:13px;*/ }
+/* wertpapiersuche - selectbox wpart + boerse */
+select.fsel { width:210px; margin-top:3px;}
+
+
+form#searchform {
+	margin: 0px;
+	font-size: 10px; 
+	background-color: #F4F4F4;
+	border: 1px solid #789DB3;
+	padding: 10px; 
+
+}
+
+form#searchform2 {
+	margin: 0px;
+	font-size: 10px; 
+	background-color: #F4F4F4;
+	border: 1px solid #789DB3;
+	padding: 5px 0px; 
+	margin-bottom: 20px;
+}
+
+
+/* Positionierung und Style Seitenangaben */
+.rspg { float: left; color: #666666; font-size: 10px; padding-top: 2px;}
+/* Positionierung und Style Seitenlinks */
+.rslk { float:right; font-size: 10px; padding-top: 2px;}
+/* Linkstyle */
+a.plk { font-weight: bold }
+
+/* Textstyle - blauer für Seitenzahlenpunkte .. 1 2 3 .. */
+.ppt { color: #1963A9; }
+
+div.pagectrtop { height: 18px; margin-top: 20px;}
+div.pagectrbtm { height: 18px; margin-bottom: 20px;}
+
+table#searchtab { background-color: #F4F4F4; }
+table#searchtab td { background-color: #F4F4F4; border:none; }
+table#searchtab td.aright {  }
+table#searchtab .col1 { width: 120px; }
+table#searchtab .col2 { width: 87px; }
+table#searchtab .col3 { width: 40px; }
+table#searchtab .col4 { width: 87px;}
+table#searchtab div.intab { padding-right: 10px; }
+
+input.asisin { width: 100%; margin-top: 1px;}
+input.asrlz { width: 100%; margin-top: 1px;} 
+select.aswhg { width: 87px; margin-top: 1px;}
+select.asrend { width: 87px; margin-top: 1px; }
+select.aszins { width: 87px; margin-top: 1px;}
+select.askup { width: 87px; margin-top: 1px;}
+
+
+table#akz { width: 590px; font-size: 9px; border: 1px solid #789DB3; margin-bottom: 10px; }
+table#akz th { font-size: 9px; border-right:0px;  }
+table#akz td { font-size: 9px; border-right: 0px; background-color: #F4F4F4; }
+table#akz td.sectab { border-left: 1px solid #789DB3; }
+table#akz div.intab { padding-left: 5px; padding-right: 5px; }
+table#akz .col1 { width: 25%; } 
+table#akz .col2 { width: 25%; }
+table#akz .col3 { width: 25%; } 
+table#akz .col4 { width: 25%; }
+
+select.nsel { width: 200px; margin-top: 2px; }
+
+table#newstab { background-color: #F4F4F4; margin-left: 10px;}
+table#newstab td { background-color: #F4F4F4; border:none; }
+table#newstab .col1 { width: 220px; }
+table#newstab .col2 { width: 220px; }
+table#newstab .col3 { width: auto; }
+table#newstab *.subbut {margin-top:15px; }
+
+
+table#fondtab { width: 590px; background-color: #F4F4F4; }
+table#fondtab td { background-color: #F4F4F4; border:none; }
+table#fondtab .col1 { width: 220px; }
+table#fondtab .col2 { width: 220px; }
+table#fondtab .col3 { width: 55px; }
+table#fondtab .col4 { width: auto; }
+table#fondtab *.subbut {margin-top:15px; }
+
+a.searchlink {
+font-size: 9px;
+}
+
+table#fondtaberw { width: 100%; background-color: #F4F4F4; }
+table#fondtaberw td { background-color: #F4F4F4; border:0px;}
+table#fondtaberw div.intab2 { padding-left: 10px;}
+table#fondtaberw .col1 { width: 175px; }
+table#fondtaberw .col2 { width: 95px; }
+table#fondtaberw .col3 { width: auto; }
+table#fondtaberw .subbut { margin-right: 140px; }
+
+
+input.fitp { width: 60px; }
+
+div.newstxt { width: 590px; margin-left: 5px;  }
+
+/* pre { font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 13px; } */
+
+
+/* wertpapiersuche - inputfeld suchbegriff */
+input.fsearch2 {	width:303px; /*height:13px;*/ }
+/* wertpapiersuche - selectbox wpart + boerse */
+select.fsel2 { width:305px; }
+select.fselsmall { width:210px;  }
+
+
+table#fsee { width: 590px; font-size: 9px; }
+table#fsee th { font-size: 9px; border-right:0px;  }
+table#fsee td { font-size: 9px; border:none; padding-right: 10px; padding-left: 10px;background-color: #f4f4f4; }
+table#fsee td.term { font-weight: bold ;}
+table#fsee td.btn { vertical-align: bottom; }
+table#fsee .col1 { width: auto; } 
+table#fsee .col2 { width: auto; }
+table#fsee .col3 { width: 100px; }
+
+
+/* Depotnavigationsliste Einstandswert/Schlusskurs */
+ul#chartsel {	font-size: 10px; list-style-type: none; color: #000000; font-weight: bold;	margin-bottom: 5px; margin-right: 10px;}
+ul#chartsel li {	display: inline; vertical-align: middle;}
+
+
+div.subbutpos {
+margin-left:27px;margin-top:9px;
+}
+
+
+div#login { 
+font-size: 9px; font-family:Verdana, Arial, Helvetiva, sans-serif; width:178px; margin-bottom: 0px; background-color: #ffffff; 
+}
+div.logintab {  height: 80px;
+padding: 7px 10px; border: 1px solid #789DB3; margin-bottom: 10px; background-color: #FFFFFF;
+}
+
+/* Navigationsliste 3. Ebene */
+ul.linklist {	list-style-type: none; margin: 0px;	padding: 4px 0px 2px 0px; }
+ul.linklist li {	background-image: url(../images/nav_dot2.gif); background-repeat: no-repeat; background-position: 0px 6px; font-weight: bold; color: #1963A9; border:none; padding: 0px 0px 0px 8px; }
+
+
+/* Index Kursliste Tabelle */
+table.ihs {	width: 180px; font-size:9px; border: 1px solid #789DB3; }
+table.ihs th {	font-size:9px; font-weight: bold; border-color: #789DB3; border: none;} 
+table.ihs tr.chart td { padding: 0px; }
+table.ihs td.spcline { border: 0px; height: 1px; }
+table.ihs td.thbline { border-bottom: 1px solid #789DB3; }
+table.ihs td.negtrend { text-align: right; border-right: 1px solid #CCCCCC; }
+table.ihs td.postrend { text-align: left;   }
+table.ihs td { border-right: none; }
+table.ihs tr:hover { background-color: #F4F4F4; }
+table.ihs .col1 { width: auto;} 
+table.ihs .col2 { width: 20px; }
+table.ihs .col3 { width: auto; }
+
+table.ihs div.intab { }
+
+form#chartset {
+	margin: 0px;
+	font-size: 10px; 
+}
+
+form#loginform { margin: 0px; padding:0px; }
+div#persarea { font-size: 9px; margin-left: 10px; width:160px; margin-bottom: 10px; text-align:left;}
+div.iptline { height: 20px; margin: 0px; padding:0px;  }
+input.iptlogin { font-size: 9px; width: 100px; background-color: #F4F4F4; float: right; }
+
+div.loginleft {  margin-top: 8px; height: 15px; }
+
+div.loginright { float: right; margin-top: 8px;  height: 15px;}
+
+img.selbtn { margin-right: 5px; margin-bottom: -1px;}
+/* Navigationsliste 2. Ebene */
+ul#persnav { list-style-type: none; margin: 0px; padding: 0px; }
+ul#persnav li {	font-weight: normal; color: #1963A9; border: none; height: 14px;}
+
+
+div.more {
+	margin-top: 4px;
+	 margin-bottom: 20px;
+	 font-size: 10px;
+}
+
+
+table#nlist { }
+table#nlist td { border:none; }
+table#nlist tr { background-color: #F4F4F4; }
+table#nlist tr:hover { background-color: #FFFFFF; }
+table#nlist .col1 { width:auto; }
+table#nlist .col2 { width:auto; }
+table#nlist div.intab { padding-left: 10px; padding-right: 10px; }
+
+
+table#utl { margin-top: 10px; }
+table#utl td { border:none; }
+table#utl th { border: none; font-weight: bold; }
+table#utl tr { background-color: #F4F4F4;}
+table#utl tr:hover { background-color: #FFFFFF; }
+table#utl .col1 { width:auto; }
+table#utl .col2 { width:auto; }
+table#utl .col3 { width:auto; }
+table#utl .col4 { width:auto; }
+
+table#utl div.intab { padding-left: 10px; padding-right: 10px; }
+
+
+
+
+
+/* Index Kursliste Tabelle */
+table.dfx {	width: 610px; font-size:10px; margin-bottom: 10px;}
+table.dfx th {	font-size:10px;  }
+table.dfx td.negtrend { text-align: right; }
+table.dfx td.postrend { text-align: left;   }
+table.dfx .col1 { } 
+table.dfx .col2 { width: 30px; }
+table.dfx .col3 { width: auto; }
+table.dfx .col4 { width: auto; }
+table.dfx .col5 { width: auto; }
+table.dfx .col6 { width: auto; }
+
+
+/* Index Kursliste Tabelle */
+table.dmk {	width: 610px; font-size:10px; margin-bottom: 10px;}
+table.dmk th {	font-size:10px;  }
+table.dmk td.negtrend { text-align: right; }
+table.dmk td.postrend { text-align: left;   }
+table.dmk .col1 { } 
+table.dmk .col2 { width: auto; }
+table.dmk .col3 { width: 40px; }
+table.dmk .col4 { width: 88px; }
+table.dmk .col5 { width: auto; }
+table.dmk .col6 { width: auto; }
+table.dmk .col7 { width: auto; }
+table.dmk .col8 { width: auto; }
+table.dmk .col9 { width: auto; }
+
+
+form#devisenform {
+	margin: 0px;
+	font-size: 10px; 
+	background-color: #F4F4F4;
+	border-top: 1px solid #789DB3;
+	padding-top: 10px; 
+	padding-bottom: 10px; 	
+	padding-left: 3px; 
+}
+
+select.devsel {
+	margin-left: 10px;
+}
+
+table#devrtab { width: 285px; }
+table#devrtab td { border: none; background-color: #F4F4F4;}
+table#devrtab tr.empty td { border-top: 1px solid #CCCCCC; height: 8px; }
+table#devrtab td.special { font-weight:bold; }
+table#devrtab .col1 { width: 80px; }
+table#devrtab .col2 { width: auto; }
+
+input.iptcalc, input.ipterg { width: 205px; }
+select.currsel { width: 100%; }
+
+/* Index Kursliste Tabelle */
+table.zgm {	width: 610px; font-size:10px; margin-bottom: 10px;}
+table.zgm th {	font-size:10px;  }
+table.zgm td.negtrend { text-align: right; }
+table.zgm td.postrend { text-align: left;   }
+table.zgm .col1 { } 
+table.zgm .col2 { width: auto; }
+table.zgm .col3 { width: 40px; }
+table.zgm .col4 { width: 88px; }
+table.zgm .col5 { width: auto; }
+table.zgm .col6 { width: auto; }
+table.zgm .col6 { width: auto; }
+
+
+/* Index Kursliste Tabelle */
+table.zkm {	width: 610px; font-size:10px; margin-bottom: 10px;}
+table.zkm th {	font-size:10px;  }
+table.zkm .col1 { } 
+table.zkm .col2 { width: auto; }
+table.zkm .col3 { width: auto; }
+table.zkm .col4 { width: auto; }
+table.zkm .col5 { width: auto; }
+
+table#osm { width: 590px; margin-bottom: 15px; border: 1px solid #789DB3; margin-left: 10px; }
+table#osm th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF;} 
+table#osm td { background-color: #F4F4F4; }
+table#osm td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#osm td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#osm tr:hover td { background-color: #FFFFFF; }
+table#osm .col1 { width: auto; }
+table#osm .col2 { width: 95px; }
+table#osm .col3 { width: 95px; }
+table#osm .col4 { width: 95px; }
+table#osm .col5 { width: 95px; }
+table#osm .col6 { width: 95px; }
+
+
+input.erg { border: none; border-bottom: 1px solid #999999; background-color: transparent; width: 205px; }
+
+div.infoc { border: 1px solid #789DB3; margin-bottom: 15px; margin-left: 5px; background-color: #FFFFFF; }
+
+table.infotab {	width:590px; margin-left:5px; margin-bottom: 15px; }
+table.infotab td { background-color:#F4F4F4; border:0px; }
+table.infotab .col1 { width:248px;}
+table.infotab .col2 { width:20px; }
+table.infotab .col3 { width:auto;}
+
+div.infobox {
+	border: 1px solid #789DB3; width:330px;background-color:#FFFFFF; margin-left:4px;  height:99%;
+}
+
+
+/* Index Kursliste Tabelle */
+table#foi { width: 320px; font-size:9px; margin: 0px 5px; /*margin-top: 3px;*/}
+table#foi th {	font-size:9px;}
+table#foi td { border-right: 0px; border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#foi td.leftcol { font-weight: bold; }
+table#foi td.rightcol { text-align: right; }
+table#foi tr.last td { border-bottom: 0px; }
+table#foi .col1 { width: auto;} 
+table#foi .col2 { width: auto; }
+
+
+table.idxi { width: 155px; font-size:9px; margin: 0px 5px; /*margin-top: 3px;*/}
+table.idxi th {	font-size:9px;}
+table.idxi td { border-right: 0px; border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table.idxi td.leftcol { font-weight: bold; }
+table.idxi td.rightcol { text-align: right; }
+table.idxi tr.last td { border-bottom: 0px; }
+table.idxi .col1 { width: auto;} 
+table.idxi .col2 { width: auto; }
+
+
+table.icharttab { width: 100%; margin: 0px; margin-bottom: 15px; padding: 0px; }
+table.icharttab td { border: none;}
+table.icharttab .col1 { width:183px; }
+table.icharttab .col2 { width:auto; }
+table.icharttab .col3 { width:183px; }
+table.icharttab .col4 { width:auto; }
+table.icharttab .col5 { width:183px; }
+
+
+/* Index Kursliste Tabelle */
+table.ihs {	width: 180px; font-size:9px; border: 1px solid #789DB3; margin: 0px; }
+table.ihs th {	font-size:9px; font-weight: bold; border-color: #789DB3; border: none;} 
+table.ihs tr.chart td { padding: 0px; }
+table.ihs td.spcline { border: 0px; height: 1px; }
+table.ihs td.thbline { border-bottom: 1px solid #789DB3; }
+table.ihs td { border-right: none; border-bottom: 1px solid #CCCCCC; }
+table.ihs tr.last td { border: none; }
+table.ihs tr:hover { background-color: #F4F4F4; }
+table.ihs .col1 { width: auto;} 
+table.ihs .col2 { width: 20px; }
+table.ihs .col3 { width: auto; }
+
+table.ihs div.intab { }
+
+
+table#perstab { background-color: #F4F4F4; }
+table#perstab td { background-color: #F4F4F4; border:none; }
+table#perstab td.aright {  }
+table#perstab .col1 { width: 150px; }
+table#perstab .col2 { width: 150px; }
+table#perstab .col3 { width: auto; }
+table#perstab div.intab { padding-right: 10px; }
+
+/* Tabelle Musterdepot Navigation */
+table#mdepot1 { width: 100%; font-size: 10px; padding: 0px; border: none; border: 1px solid #789DB3;}
+table#mdepot1 td { border: none; background-color: #F4F4F4; vertical-align: middle; padding: 7px; }
+table#mdepot1 tr.special td { border-bottom: 1px solid #CCCCCC;  }
+
+/* Depot auswählen */
+
+select.omdepot { width: 140px; }
+div.omdepotf { text-align: right; }
+select.omdepotf { width: 140px; }
+
+/* Depot Detail Tabelle */
+table#md1 {	width: 590px; font-size:10px; border: 1px solid #789DB3; margin-left: 5px;  }
+table#md1 th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF; padding:  2px;} 
+table#md1 td { background-color: #F4F4F4; }
+table#md1 td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#md1 td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#md1 tr:hover td { background-color: #f4f4f4; }
+table#md1 .col1 { width: auto;} 
+table#md1 .col2 { width: 62px; }
+table#md1 .col3 { width: 72px; }
+table#md1 .col4 { width: 90px; }
+table#md1 .col5 { width: 90px; }
+table#md1 .col6 { width: 80px; }
+table#md1 .col7 { width: 60px; }
+
+
+table#md1.md2 { width: 100%; margin-left: 0px; border: none; }
+table#md1.md2 th {	font-size:10px; border-color: #789DB3; background-color: #F4F4F4; padding:  2px;} 
+table#md1.md2 td { background-color: #FFFFFF; }
+table#md1.md2 td.thtline { background-color: #F4F4F4; }
+table#md1.md2 td.thbline { border-bottom: 1px solid #999999; background-color: #F4F4F4;}
+table#md1.md2 td.lastcol { text-align: left; border-right: 0px solid #FFFFFF; padding: 2px; }
+
+/* Musterdepot Zusammenfassung */
+table#md3 { width: 100%; font-size:10px; border: 1px solid #789DB3; }
+table#md3 td { padding: 5px;  background-color: #F4F4F4; }
+table#md3 .col1 { width: auto;} 
+table#md3 .col2 { width: 90px; }
+table#md3 .col3 { width: auto; }
+table#md3 .col4 { width: 90px; }
+
+/* Musterdepot WP Suche */
+input.md1isin { width: 100px; }
+select.md1boerse { width: 100px; }
+select.md1typ { width: 100px; }
+
+/* Benachrichtigungen */
+
+table#md4 {	width: 590px; font-size:10px; border: 1px solid #789DB3; margin-left: 5px;  }
+table#md4 th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF; padding:  2px;} 
+table#md4 td { background-color: #F4F4F4; }
+table#md4 td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#md4 td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#md4 tr:hover td { background-color: #f4f4f4; }
+table#md4 .col1 { width: auto;} 
+table#md4 .col2 { width: 50px; }
+table#md4 .col3 { width: 62px; }
+table#md4 .col4 { width: 90px; }
+table#md4 .col5 { width: 90px; }
+table#md4 .col6 { width: 50px; }
+table#md4 .col7 { width: 70px; }
+
+table#md4.md5 { width: 100%; margin-left: 0px; border: none; }
+table#md4.md5 th {	font-size:10px; border-color: #789DB3; background-color: #F4F4F4;} 
+table#md4.md5 td { background-color: #FFFFFF; }
+table#md4.md5 td.thtline { background-color: #F4F4F4; }
+table#md4.md5 td.thbline { border-bottom: 1px solid #999999; background-color: #F4F4F4;}
+table#md4.md5 td.lastcol { text-align: left; border-right: 0px solid #FFFFFF; padding: 2px; }
+
+/* Musterdept übernehmen Formular */
+table.uebnehm1 { width: 100%;  }
+table.uebnehm1.td { background-color: #e9e9e9; }
+
+.uebbtn1 { font-size: 9px; padding: 0px 1px 0px 1px; margin: 3px 0px;  background-color: #F4F4F4; color: #808080; border: 1px #999999 solid; width: 120px; }
+
+
+/* Tabelle Formular Benachrichtigungen setzen */
+table#benachricht1 { width: 100%; font-size: 10px; padding: 0px; border: none; border: 1px solid #789DB3;}
+table#benachricht1 .col1 { width: 70%; } 
+table#benachricht1 .col2 { width: 30%;  }
+table#benachricht1 td { border: none; background-color: #F4F4F4; vertical-align: middle; padding: 7px; }
+table#benachricht1 tr.special td { border-bottom: 1px solid #CCCCCC;  }
+table#benachricht1 td.rightcol { background-color: #e9e9e9; border-left: 1px solid #CCCCCC;  }
+table#benachricht1 td.rightcol1 { border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC;  }
+table#benachricht1 td.special3 { font-weight: bold; border-top: 1px solid #CCCCCC;  border-bottom: 1px solid #CCCCCC; }
+
+table#formtable1 { width: 100%; font-size: 10px; padding: 0px; border: none; }
+table#formtable1 .col1 { width: 30%; }
+table#formtable1 .col2 { width: 70%; }
+table#formtable1 .smalltext { width: 70px; margin: 0px; margin-right: 20px; }
+table#formtable1  select.formselect1 { font-size: 9px; }
+table#formtable1  select.formselect2 { font-size: 9px; margin-left: 10px; }
+table#formtable1  select.formselect1 { font-size: 9px; }
+table#formtable1  select.formselect3 { font-size: 9px; margin-left: 20px; }
+.savebutn { width: 100%; text-align: right; padding-top: 10px; }
+
+
+/* Musterdepot Transaktionen */
+
+table#md7 {	width: 590px; font-size:10px; border: 1px solid #789DB3; margin-left: 5px;  }
+table#md7 th {	font-size:10px; border-color: #789DB3; background-color: #FFFFFF; padding:  2px;} 
+table#md7 td { background-color: #F4F4F4; }
+table#md7 td.spcline { border: 0px; height: 1px; background-color: #FFFFFF;}
+table#md7 td.thbline { border-bottom: 1px solid #789DB3; background-color: #FFFFFF;}
+table#md7 tr:hover td { background-color: #f4f4f4; }
+table#md7 .col1 { width: auto;} 
+table#md7 .col2 { width: auto; }
+table#md7 .col3 { width: 62px; }
+table#md7 .col4 { width: 50px; }
+table#md7 .col5 { width: 80px; }
+table#md7 .col6 { width: 50px; }
+table#md7 .col7 { width: 70px; }
+table#md7 .col8 { width: 40px; }
+
+table#md7.md8 { width: 100%; margin-left: 0px; border: none; }
+table#md7.md8 th {	font-size:10px; border-color: #789DB3; background-color: #F4F4F4;} 
+table#md7.md8 td { background-color: #FFFFFF; }
+table#md7.md8 td.thtline { background-color: #F4F4F4; }
+table#md7.md8 td.thbline { border-bottom: 1px solid #999999; background-color: #F4F4F4;}
+table#md7.md8 td.lastcol { text-align: right; border-right: 0px solid #FFFFFF; padding: 2px; }
+
+
+
+div.backlink {  width: 100%; text-align: right; padding-top: 10px; font-size: 10px; }
+
+/* musterdepot chartgrafik */
+div.chartbox { width: 298px; height: 128px; }
+
+
+table#mdchart1 { width: 590px; font-size:10px; background-color: #F4F4F4; border: 0px;  }
+table#mdchart1 tr, table#mdchart1  td { background-color: #F4F4F4; border: 0px;  }
+table#mdchart1 .col1 { width: 298px;  }
+table#mdchart1 .col2 { width: 292px;  }
+
+
+table#mdchart2 { width: 100%; font-size:10px; background-color: #F4F4F4; }
+table#mdchart2 .col1 { width: 70%; }
+table#mdchart2 .col2 { width: 15%; }
+table#mdchart2 .col3 { width: 15%; }
+table#mdchart2 td { background-color: #F4F4F4; border-bottom: 1px solid #CCCCCC;  }
+
+div.colorbox { width: 30px; height: 15px; }
+

@@ -63,12 +63,8 @@ class MarketData(object):
             for mydatetime in tuple(self.marketdata[isin]['Market Data'].keys()):
                 if mydatetime < today - one_year:
                     del self.marketdata[isin]['Market Data'][mydatetime]
-##                    logging.info('MarketData: Datetime (%s) from ISIN (%s) deleted.',
-##                                 str(mydatetime),
-##                                 isin)
                     if not self.marketdata[isin]['Market Data']:
                         del self.marketdata[isin]
-##                        logging.info('MarketData: ISIN (%s) deleted.', isin)
                     deleted_counter += 1
                     
         if deleted_counter:

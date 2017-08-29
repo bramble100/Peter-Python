@@ -19,10 +19,11 @@ class MarketData(object):
     '''Holds all the data regarding the companies and the market data.'''
 
     marketdata = {}
-
+    
     def __init__(self):
         self.marketdata = {}
         self.converter = teletrader.TTConverter()
+        self.changed_after_load = False
 
     def load_from_file(self):
         '''Loads the market data from a CSV file.'''
@@ -70,6 +71,7 @@ class MarketData(object):
         if deleted_counter:
             logging.info('MarketData: %d old entry(s) deleted.',
                          deleted_counter)
+            self.changed_after_load = True
         else:
             logging.info('MarketData: No old entry deleted.')
 
@@ -142,14 +144,17 @@ class MarketData(object):
         if added_counter:
             logging.info('MarketData: %d new entry(s) added.',
                          added_counter)
+            self.changed_after_load = True
         else:
             logging.info('MarketData: No new entry added.')
-
 
     def save_to_file(self):
         '''Saves the market data into a CSV file.'''
 
         logging.info('MarketData: Saving market data to CSV.')
+        if not self.changed_after_load:
+            logging.info('MarketData: No change after load, no save required.')
+            return
 
         content = list()
 
@@ -164,15 +169,6 @@ class MarketData(object):
                         'Stock Exchange'))
         content.extend(_dict_to_tuple(self.marketdata))
         mdc.save_to_file(content)
-
-def _list_contains_date(mylist, mydate):
-    '''Returns True if given list contains the given date.'''
-
-    for item in mylist:
-        if _datetime_to_date(item) == _datetime_to_date(mydate):
-            return True
-
-    return False
 
 def _datetime_to_date(dt):
     '''Returns a date obtained from the given datetime.'''

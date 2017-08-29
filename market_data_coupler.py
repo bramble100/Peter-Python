@@ -17,7 +17,6 @@ _market_data_filename = 'market_data.csv'
 dateformat = '%Y.%m.%d'
 timeformat = '%H:%M:%S'
 
-
 def loaded_past_market_data(converter):
     '''
     Returns the stored market data from file.
@@ -56,9 +55,12 @@ def loaded_past_market_data(converter):
             loaded_market_data[id]['Market Data'] ={}
         loaded_market_data[id]['Market Data'][mydatetime] = {'Closing Price' : line['Closing Price'],
                                                              'Volume' : line['Volume']}
-
-    logging.info('MarketDataCoupler: %d new ID(s) loaded with market data.',
-                 len(loaded_market_data))
+        
+    if len(loaded_market_data):
+        logging.info('MarketDataCoupler: %d new ID(s) loaded with market data.',
+                     len(loaded_market_data))
+    else:
+        logging.info('MarketDataCoupler: No new ID loaded.')
 
     return loaded_market_data
 

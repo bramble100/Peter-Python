@@ -4,12 +4,16 @@ sorted alphabetically by company name.
 
 __last_change__ = '2017.08.29.'
 
+import configparser
 import os
 import logging
 import stock_exchange_data
 import sys
 
 def main():
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
 
     logging.basicConfig(level=logging.INFO)
 ##    logging.basicConfig(level=logging.DEBUG)
@@ -20,7 +24,7 @@ def main():
     past_market_data.clean()
 
     actual_market_data = stock_exchange_data.MarketData()
-    actual_market_data.load_from_html(True)
+    actual_market_data.load_from_html(config['DEFAULT']['Source is web'])
     
     past_market_data.append(actual_market_data.marketdata)
     past_market_data.clean()

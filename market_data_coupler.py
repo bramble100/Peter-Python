@@ -6,16 +6,20 @@ Planned: obtain from JSON, from the web, etc.
 '''
 __last_change__ = '2017.08.29.'
 
+import configparser
 import csv_helper
 import datetime
 import logging
 import sys
 import teletrader
 
-_market_data_filename = 'market_data.csv'
-##_test_output_market_data_filename = 'market_data_test_output.csv'
-dateformat = '%Y.%m.%d'
-timeformat = '%H:%M:%S'
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+_market_data_filename = config['Market Data Coupler']['Market Data filename']
+_test_output_market_data_filename = config['Market Data Coupler']['Test Output Market Data filename']
+dateformat = config['Market Data Coupler']['Date format']
+timeformat = config['Market Data Coupler']['Time format']
 
 def loaded_past_market_data(converter):
     '''

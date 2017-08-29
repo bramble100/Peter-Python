@@ -5,16 +5,20 @@ TeleTrader pages.
 
 __last_change__ = '2017.08.29.'
 
+import configparser
 import csv_helper
 import datetime
 from html.parser import HTMLParser
 import logging
 import sys
 
-urls_filename = 'teletrader-links.csv'
-tt2isin_filename = 'ISIN.csv'
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+urls_filename = config['TeleTrader']['URLs filename']
+tt2isin_filename = config['TeleTrader']['TeleTrader to ISIN converter filename']
 # source string example: 07.14./17:35
-_datetime_format = '%m.%d./%H:%M'
+_datetime_format = config['TeleTrader']['Datetime format']
 
 # pattern to process
 pattern = ( ('start', 'tr'),

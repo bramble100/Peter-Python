@@ -55,10 +55,9 @@ def _tuples_loaded_from_url(stock_exchange_name, url):
     one url.
     '''
 
-    f = urllib.request.urlopen(url)
     return _tuples_parsed_from_html(stock_exchange_name,
-                                      str(f.read(),
-                                          encoding='utf-8'))
+                                    str(urllib.request.urlopen(url).read(),
+                                        encoding='utf-8'))
 
 def _urls_loaded_from_csv():
     '''

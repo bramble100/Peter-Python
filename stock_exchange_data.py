@@ -3,7 +3,7 @@ Library to fetch the stock exchange closing prices and volume
 from tdcfinancial on a given day, sorted alphabetically by company name.
 '''
 
-__last_change__ = '2017.08.28.'
+__last_change__ = '2017.08.29.'
 
 
 import datetime
@@ -28,10 +28,14 @@ class MarketData(object):
         '''Loads the market data from a CSV file.'''
 
         logging.info('MarketData: Loading market data from CSV.')
-        self.marketdata = mdc.loaded_past_market_data(self.converter.ttnames2isin)
+        self.marketdata = mdc.loaded_past_market_data(
+            self.converter.ttnames2isin)
 
         logging.info('MarketData: %d new entry(s) loaded.',
                      len(self.marketdata))
+
+        for name in self.converter.missing_names:
+            logging.warning("Marketdata: TeleTrader name (%s) has no ISIN.", name)
 
     def load_from_html(self, source_is_web = True):
         '''Loads the market data from HTML (either web or a file).'''
@@ -88,41 +92,48 @@ class MarketData(object):
                 added_counter += len(other_market_data[isin]['Market Data'])
                 logging.debug('MarketData: New ISIN (%s) appended.', isin)
                 continue
+            
             logging.debug('MarketData: ISIN (%s) is found in existing market data.', isin)
             
             for addable_datetime in other_market_data[isin]['Market Data'].keys():
 
+                if 'Market Data' not in self.marketdata[isin]:
+                    self.marketdata[isin]['Market Data'] = other_market_data[isin]['Market Data']
+                    added_counter += len(other_market_data[isin]['Market Data'])
+                    logging.debug('MarketData: New market dataset added.')
+                    break
+
                 addable_date = _datetime_to_date(addable_datetime)
+
                 logging.debug('MarketData: Date (%s) might be added.',
                               str(addable_date))
-
-                if 'Market Data' not in self.marketdata[isin]:
-                    self.marketdata[isin]['Market Data'] = {}
-                    self.marketdata[isin]['Market Data'].update(
-                        other_market_data[isin]['Market Data'])
-                    added_counter += len(other_market_data[isin]['Market Data'])
-                    logging.debug('MarketData: New market data with datetime (%s) appended.',
-                                  str(addable_datetime))
-                    continue
                 
                 for existing_datetime in sorted(
                     self.marketdata[isin]['Market Data'].keys(),
                     reverse=True):
 
+                    existing_date = _datetime_to_date(existing_datetime)
+
                     # is there the same day? and if is, the new data is later?
                     logging.debug('Existing datetime: %s, addable datetime: %s',
                                   str(existing_datetime),
                                   str(addable_datetime))
-                    
-                    if addable_datetime > existing_datetime:
-                        if addable_date == _datetime_to_date(existing_datetime):
+
+                    # decision branches, what to do with the addable market data?
+                    update = existing_date == addable_date and existing_datetime < addable_datetime
+                    discard = existing_date == addable_date and existing_datetime >= addable_datetime
+                    insert = existing_datetime < addable_datetime
+
+                    if discard:
+                        logging.debug('MarketData: Datetime (%s) discarded.',
+                                      str(addable_datetime))                            
+                        break                    
+                    elif update or insert:
+                        if update:
                             del self.marketdata[isin]['Market Data'][existing_datetime]
                             logging.debug('Existing datetime (%s) deleted.',
                                           str(existing_datetime))
-                        else:
-                            logging.debug('Addable date (%s) not found.',
-                                          str(addable_date))
-                            
+                        
                         self.marketdata[isin]['Market Data'][addable_datetime] = {}
                         self.marketdata[isin]['Market Data'][
                             addable_datetime] = other_market_data[isin]['Market Data'][

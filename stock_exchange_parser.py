@@ -2,7 +2,7 @@
 sorted alphabetically by company name.
 '''
 
-__last_change__ = '2017.08.25.'
+__last_change__ = '2017.08.29.'
 
 import os
 import logging
@@ -12,6 +12,7 @@ import sys
 def main():
 
     logging.basicConfig(level=logging.INFO)
+##    logging.basicConfig(level=logging.DEBUG)
     
     past_market_data = stock_exchange_data.MarketData()
     past_market_data.load_from_file()

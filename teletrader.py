@@ -3,7 +3,7 @@ Contains all the objects, functions and data for parsing data obtained from
 TeleTrader pages.
 '''
 
-__last_change__ = '2017.08.28.'
+__last_change__ = '2017.08.29.'
 
 import csv_helper
 import datetime
@@ -99,13 +99,15 @@ class TTConverter(dict):
             return self
 
         logging.info('TeleTrader: Loading ISINs from file.')
+
         self.ttnames2isin = {line['TeleTrader Name']: line['ISIN']
                              for line
                              in csv_helper.reader(tt2isin_filename)}
+        self.missing_names = set()
+
         logging.info(str.format('TeleTrader: {} '
                                  'new TeleTrader Name(s) loaded.',
                                  len(self.ttnames2isin)))
-        missing_names = set()
         
     def __getitem__(self, key):
         '''Returns the ISIN by TeleTrader name. In case no ISIN can be returned,

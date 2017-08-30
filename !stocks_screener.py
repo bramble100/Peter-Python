@@ -17,8 +17,8 @@ def main():
     config = configparser.ConfigParser()
     config.read('config.ini')
 
-    logging.basicConfig(level=logging.INFO)
-##    logging.basicConfig(level=logging.DEBUG)
+##    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     
     reg = registry.Registry()
 

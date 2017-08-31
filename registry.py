@@ -3,8 +3,7 @@ Library to fetch the stock exchange closing prices and volume
 from tdcfinancial on a given day, sorted alphabetically by company name.
 '''
 
-__last_change__ = '2017.08.30.'
-
+__last_change__ = '2017.08.31.'
 
 import configparser
 import csv_helper
@@ -13,6 +12,7 @@ import logging
 import marketdata_coupler as mdc
 import sys
 import teletrader
+import unittest
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -31,21 +31,24 @@ class Registry(dict):
                           'Faulty months in report': set(),
                           'Faulty report expiry dates': set()}
 
-        self.update( {row['ISIN'] : self._registry_row(row)
+    def load_from_file(self):
+        '''Loads the registry CSV file.'''
+
+        self.update( {row['ISIN'] : self._registry_row_from_csv(row)
                       for row
                       in csv_helper.reader(config['Registry']['Registry filename'])
                       if self._registry_row_is_addable(row)})
-        
+
         if len(self):
             if not self['Errors']['Errors found']:
                 logging.info('Registry: %d new ISIN loaded. No errors found.', len(self))
-            else:            
+            else:
                 logging.error('Registry: The following errors found:')
         else:
             logging.error('Registry: No ISIN loaded.')
 
     def _registry_row_is_addable(self, row):
-        '''Checks one stock data in a dict.'''       
+        '''Checks one stock data in a dict.'''
 
         if not row['ISIN']:
             self['Errors']['Errors found'] = True
@@ -61,25 +64,46 @@ class Registry(dict):
             self['Errors']['Missing names'].add(row['ISIN'])
             return True
 
-        # months = int(row['Months in Report']) if row['Months in Report'] != '' else 0
-        
-        if row['Months in Report'] not in (3, 6, 9, 12):
+        try:
+            (int(row['Months in Report']) if row['Months in Report'] != '' else 0) in (0, 3, 6, 9, 12)
+        except ValueError:
             self['Errors']['Errors found'] = True
             self['Errors']['Faulty months in report'].add(row['ISIN'])
+        finally:
             return True
-        
-    def _registry_row(self, row):
+
+        try:
+            datetime.datetime.strptime(str(row['Report Expiry Date']),
+                                       config['DEFAULT']['Date format'])
+        except ValueError:
+            self['Errors']['Faulty report expiry dates'].add(row['ISIN'])
+        finally:
+            return True
+
+    def _registry_row_from_csv(self, row):
         '''Processes one stock data from a dict.'''
-        
+
         return {'Name' : row['Name'],
                 'EPS': row['EPS'],
                 'Months in Report': row['Months in Report'],
                 'Report Expiry Date': row['Report Expiry Date'],
                 'Own Investor Link': row['Own Investor Link'],
                 'Stock Exchange Link': row['Stock Exchange Link']}
-    
+
 def main():
-    pass
+
+    test = TestRegistryRowIsAddable()
+
+class TestRegistryRowIsAddable(unittest.TestCase):
+    '''Tests _registry_row_is_addable.'''
+
+    def test_missing_isin(self):
+        reg = Registry()
+        row = {'ISIN' : ''}
+        self.assertFalse(reg._registry_row_is_addable(row))
+        row = {'ISIN' : '12345678901'}
+        self.assertFalse(reg._registry_row_is_addable(row))
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()
+    unittest.main()

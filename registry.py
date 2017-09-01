@@ -3,7 +3,7 @@ Library to fetch the stock exchange closing prices and volume
 from tdcfinancial on a given day, sorted alphabetically by company name.
 '''
 
-__last_change__ = '2017.08.31.'
+__last_change__ = '2017.09.01.'
 
 import configparser
 import csv_helper
@@ -24,12 +24,7 @@ class Registry(dict):
         '''Loads the basic data from a CSV file.'''
         logging.info('Registry: Loading basic data from CSV.')
 
-        self['Errors'] = {'Errors found': False,
-                          'Number of missing ISINs': 0,
-                          'Faulty ISINs': set(),
-                          'Missing names': set(),
-                          'Faulty months in report': set(),
-                          'Faulty report expiry dates': set()}
+        self['Errors'] = RegistryErrorDict()
 
     def load_from_file(self):
         '''Loads the registry CSV file.'''
@@ -90,10 +85,17 @@ class Registry(dict):
                 'Own Investor Link': row['Own Investor Link'],
                 'Stock Exchange Link': row['Stock Exchange Link']}
 
-def main():
-    '''Entry point for unit testing.'''
+class RegistryErrorDict(dict):
+    '''Keeps all the error info occuring while processing a registry.'''
 
-    test = TestRegistryRowIsAddable()
+    def __init__(self):
+
+        self.update({'Errors found': False,
+                     'Number of missing ISINs': 0,
+                     'Faulty ISINs': set(),
+                     'Missing names': set(),
+                     'Faulty months in report': set(),
+                     'Faulty report expiry dates': set()})
 
 class TestRegistryRowIsAddable(unittest.TestCase):
     '''Tests _registry_row_is_addable.'''
@@ -103,23 +105,18 @@ class TestRegistryRowIsAddable(unittest.TestCase):
 
     def test_missing_isin(self):        
         row = {'ISIN' : ''}
-        expected_errors = {'Errors found': True,
-                           'Number of missing ISINs': 1,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set()}
+        expected_errors = RegistryErrorDict()
+        expected_errors.update({'Errors found': True,
+                                'Number of missing ISINs': 1})
         self.assertFalse(self.reg._registry_row_is_addable(row))
         self.assertEqual(self.reg['Errors'], expected_errors)
 
     def test_faulty_isin(self):
         row = {'ISIN' : '12345678901'}
-        expected_errors = {'Errors found': True,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(['12345678901']),
-                           'Missing names': set(),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set()}
+        expected_errors = RegistryErrorDict()
+        expected_errors.update({'Errors found': True,
+                                'Faulty ISINs': set(['12345678901'])})
+
         self.assertFalse(self.reg._registry_row_is_addable(row))
         self.assertEqual(self.reg['Errors'], expected_errors)
 
@@ -128,12 +125,10 @@ class TestRegistryRowIsAddable(unittest.TestCase):
                'Name' : '',
                'Months in Report' : '',
                'Report Expiry Date' : '2000.01.01'}
-        expected_errors = {'Errors found': True,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(['123456789012']),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set()}
+        expected_errors = RegistryErrorDict()
+        expected_errors.update({'Errors found': True,
+                                'Missing names': set(['123456789012'])})
+
         self.assertTrue(self.reg._registry_row_is_addable(row))
         self.assertEqual(self.reg['Errors'], expected_errors)
 
@@ -141,12 +136,10 @@ class TestRegistryRowIsAddable(unittest.TestCase):
         row = {'ISIN' : '123456789012',
                'Name' : 'Company',
                'Report Expiry Date' : '2000.01.01'}
-        expected_errors = {'Errors found': True,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(),
-                           'Faulty months in report': set(['123456789012']),
-                           'Faulty report expiry dates': set()}
+        expected_errors = RegistryErrorDict()
+        expected_errors.update({'Errors found': True,
+                                'Faulty months in report': set(['123456789012'])})
+
         for months in ('X', '4'):
             row['Months in Report'] = months
             self.assertTrue(self.reg._registry_row_is_addable(row))
@@ -157,28 +150,20 @@ class TestRegistryRowIsAddable(unittest.TestCase):
         row = {'ISIN' : '123456789012',
                'Name' : 'Company',
                'Report Expiry Date' : '2000.01.01'}
-        expected_errors = {'Errors found': False,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set()}
+        
         for months in ('', '3', '6', '9', '12'):
             row['Months in Report'] = months
             self.assertTrue(self.reg._registry_row_is_addable(row))
-            self.assertEqual(self.reg['Errors'], expected_errors)
+            self.assertEqual(self.reg['Errors'], RegistryErrorDict())
 
     def test_unacceptable_expiry_date(self):
         row = {'ISIN' : '123456789012',
                'Name' : 'Company',
                'Months in Report' : '',
-               'Report Expiry Date' : 'x'}
-        expected_errors = {'Errors found': True,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set(['123456789012'])}
+               'Report Expiry Date' : '20000.01.01'}
+        expected_errors = RegistryErrorDict()
+        expected_errors.update({'Errors found': True,
+                                'Faulty report expiry dates': set(['123456789012'])})
         self.assertTrue(self.reg._registry_row_is_addable(row))
         self.assertEqual(self.reg['Errors'], expected_errors)
 
@@ -187,16 +172,15 @@ class TestRegistryRowIsAddable(unittest.TestCase):
         row = {'ISIN' : '123456789012',
                'Name' : 'Company',
                'Months in Report' : ''}
-        expected_errors = {'Errors found': False,
-                           'Number of missing ISINs': 0,
-                           'Faulty ISINs': set(),
-                           'Missing names': set(),
-                           'Faulty months in report': set(),
-                           'Faulty report expiry dates': set()}
         for dates in ('', '2000.01.01'):
             row['Report Expiry Date'] = dates
             self.assertTrue(self.reg._registry_row_is_addable(row))
-            self.assertEqual(self.reg['Errors'], expected_errors)
+            self.assertEqual(self.reg['Errors'], RegistryErrorDict())
+
+def main():
+    '''Entry point for unit testing.'''
+
+    test = TestRegistryRowIsAddable()
 
 if __name__ == '__main__':
     main()

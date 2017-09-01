@@ -7,6 +7,7 @@ __last_change__ = '2017.09.01.'
 import configparser
 import csv_helper
 import datetime
+import decimal
 import logging
 import marketdata_coupler as mdc
 import sys
@@ -78,7 +79,7 @@ class Registry(dict):
         '''Processes one stock data from a dict.'''
 
         return {'Name' : row['Name'],
-                'EPS': row['EPS'],
+                'EPS': _string_to_decimal(row['EPS']),
                 'Months in Report': row['Months in Report'],
                 'Report Expiry Date': row['Report Expiry Date'],
                 'Own Investor Link': row['Own Investor Link'],
@@ -95,6 +96,17 @@ class RegistryErrorDict(dict):
                      'Missing names': set(),
                      'Faulty months in report': set(),
                      'Faulty report expiry dates': set()})
+
+def _string_to_decimal(s):
+    '''Universal converter from string to decimal. Accepts either comma or
+    point as decimal mark.'''
+
+    if '.' not in s:
+        s.replace(',', '.')
+    try:
+        return decimal.Decimal(s)
+    except decimal.InvalidOperation:
+        return decimal.Decimal('0')
 
 class TestRegistryRowIsAddable(unittest.TestCase):
     '''Tests _registry_row_is_addable.'''
@@ -189,7 +201,7 @@ class TestRegistryRowFromCSV(unittest.TestCase):
                                'Own Investor Link': 'http',
                                'Stock Exchange Link': 'http'}
         self.result_dict = {'Name' : 'Company',
-                            'EPS': '12.34',
+                            'EPS': decimal.Decimal('12.34'),
                             'Months in Report': '3',
                             'Report Expiry Date': '2000.01.01',
                             'Own Investor Link': 'http',

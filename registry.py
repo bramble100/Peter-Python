@@ -64,7 +64,7 @@ class Registry(dict):
         except ValueError:
             self['Errors']['Errors found'] = True
             self['Errors']['Faulty months in report'].add(row['ISIN'])
-            
+
         try:
             if row['Report Expiry Date']: datetime.datetime.strptime(row['Report Expiry Date'],
                                                                      config['DEFAULT']['Date format'])
@@ -73,7 +73,7 @@ class Registry(dict):
             self['Errors']['Faulty report expiry dates'].add(row['ISIN'])
 
         return True
-            
+
     def _registry_row_from_csv(self, row):
         '''Processes one stock data from a dict.'''
 
@@ -102,7 +102,7 @@ class TestRegistryRowIsAddable(unittest.TestCase):
     def setUp(self):
         self.reg = Registry()
 
-    def test_missing_isin(self):        
+    def test_missing_isin(self):
         row = {'ISIN' : ''}
         expected_errors = RegistryErrorDict()
         expected_errors.update({'Errors found': True,
@@ -149,7 +149,7 @@ class TestRegistryRowIsAddable(unittest.TestCase):
         row = {'ISIN' : '123456789012',
                'Name' : 'Company',
                'Report Expiry Date' : '2000.01.01'}
-        
+
         for months in ('', '3', '6', '9', '12'):
             row['Months in Report'] = months
             self.assertTrue(self.reg._registry_row_is_addable(row))
@@ -175,6 +175,30 @@ class TestRegistryRowIsAddable(unittest.TestCase):
             row['Report Expiry Date'] = dates
             self.assertTrue(self.reg._registry_row_is_addable(row))
             self.assertEqual(self.reg['Errors'], RegistryErrorDict())
+
+class TestRegistryRowFromCSV(unittest.TestCase):
+    '''Tests _registry_row_from_csv.'''
+
+    def setUp(self):
+        self.reg = Registry()
+        self.acceptable_row = {'ISIN': '123456789012',
+                               'Name' : 'Company',
+                               'EPS': '12.34',
+                               'Months in Report': '3',
+                               'Report Expiry Date': '2000.01.01',
+                               'Own Investor Link': 'http',
+                               'Stock Exchange Link': 'http'}
+        self.result_dict = {'Name' : 'Company',
+                            'EPS': '12.34',
+                            'Months in Report': '3',
+                            'Report Expiry Date': '2000.01.01',
+                            'Own Investor Link': 'http',
+                            'Stock Exchange Link': 'http'}
+
+    def test_acceptable_row(self):
+        self.assertTrue(self.reg._registry_row_is_addable(self.acceptable_row))
+        self.assertEqual(self.reg._registry_row_from_csv(self.acceptable_row),
+                         self.result_dict)
 
 def main():
     '''Entry point for unit testing.'''

@@ -1,6 +1,5 @@
 '''
-Library to fetch the stock exchange closing prices and volume
-from tdcfinancial on a given day, sorted alphabetically by company name.
+Library to handle the stock exchange (registry) basic data.
 '''
 
 __last_change__ = '2017.09.01.'
